@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+
+  <style media="screen">
+    .test-div {
+      width: 90px;
+      height: 100px;
+      background-color: red;
+      display: block;
+
+    }
+  </style>
+
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+
+
+
+</head>
+
+<body>
+
+  <p id="demo"></p>
+
+
+  <div class="">
+
+    <input id="button" type="button" onclick="showDiv()" name="" value="button">
+    <div id="test-div" class="test-div">
+    </div>
+
+  </div>
+
+
+
+  <div class="calendar-div">
+    <div class="year-month row">
+      <div class="small-box">
+
+      </div>
+      <div id="minus" onclick="minus()" class="small-box minus ">
+        <p>
+          <</p> </div> <div onclick="chooseMonth()" class="container-77 float-left">
+            <p id="month"></p>
+
+      </div>
+
+
+      <div onclick="chooseYear()" class="container-77 float-left">
+        <p id="year"></p>
+      </div>
+
+
+      <div id="plus" onclick="plus()" class="small-box plus float-left">
+        <p>></p>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="small-box">
+        <p>S</p>
+      </div>
+      <div class="small-box">
+        <p>M</p>
+      </div>
+      <div class="small-box">
+        <p>T</p>
+      </div>
+      <div class="small-box">
+        <p>W</p>
+      </div>
+      <div class="small-box">
+        <p>T</p>
+      </div>
+      <div class="small-box">
+        <p>F</p>
+      </div>
+      <div class="small-box">
+        <p>S</p>
+      </div>
+    </div>
+    <div id="id-dates" class="date">
+    </div>
+
+
+
+
+
+
+
+
+    <script>
+      // function show(){
+      //   let calender = document.getElementById("test");
+      //   if (calendar == null){
+      //     console.log("null");
+      //   }
+      //
+      //
+      //
+      //   calender.style.display = 'none';
+      // }
+
+      function helloWorld() {
+        document.getElementById("demo").innerHTML = "hello world";
+      }
+
+      function showDiv() {
+        document.getElementById("test-div").style.display = "none";
+      }
+
+
+
+      // build the Calendar
+
+
+
+
+      let theCalendarDate = new Date();
+      let theYear = theCalendarDate.getFullYear();
+      let theMonth = theCalendarDate.getMonth();
+      let theDay = theCalendarDate.getDay();
+      let theDate = theCalendarDate.getDate();
+      let selectMonth = true;
+      let theDateId = "" + theYear + "y" + theMonth + "m" + theDate + "d";
+
+      function setSalendar() {
+        theYear = theCalendarDate.getFullYear();
+        theMonth = theCalendarDate.getMonth();
+        theDay = theCalendarDate.getDay();
+        theDate = theCalendarDate.getDate();
+        theDateId = "" + theYear + "y" + theMonth + "m" + theDate + "d";
+
+      }
+
+
+      // show Year
+
+
+
+      // show year
+      function showMonth() {
+        var months = new Array(12);
+        months[0] = "Jan";
+        months[1] = "Feb";
+        months[2] = "Mar";
+        months[3] = "Apr";
+        months[4] = "May";
+        months[5] = "Jun";
+        months[6] = "Jul";
+        months[7] = "Aug";
+        months[8] = "Sep";
+        months[9] = "Oct";
+        months[10] = "Nov";
+        months[11] = "Dec";
+
+
+
+        var monthString = months[theMonth];
+        document.getElementById("month").innerHTML = monthString;
+
+        if (selectMonth) {
+          document.getElementById("month").style.fontWeight = 700;
+          document.getElementById("year").style.fontWeight = 400;
+        }
+
+      }
+      showMonth();
+
+
+      function showYear() {
+        document.getElementById("year").innerHTML = theYear;
+        if (!selectMonth) {
+          document.getElementById("year").style.fontWeight = 700;
+          document.getElementById("month").style.fontWeight = 400;
+        }
+      }
+
+      showYear();
+
+      function chooseMonth() {
+        selectMonth = true;
+        showMonth();
+        showYear();
+      }
+
+      function chooseYear() {
+        selectMonth = false;
+        showMonth();
+        showYear();
+      }
+
+
+      function minus() {
+        if (selectMonth) {
+          theCalendarDate.setMonth(theMonth - 1);
+
+        } else {
+          theCalendarDate.setYear(theYear - 1);
+        }
+        setSalendar();
+        showMonth();
+        showYear();
+        showDate();
+      }
+
+      function plus() {
+        if (selectMonth) {
+          theCalendarDate.setMonth(theMonth + 1);
+
+        } else {
+          theCalendarDate.setYear(theYear + 1);
+        }
+        setSalendar();
+        showMonth();
+        showYear();
+        showDate();
+      }
+
+
+
+
+
+      let dayDiv = document.getElementById("id-dates");
+
+
+      function showDate() {
+
+        let tempCalendarDate = new Date(theYear, theMonth, 1);
+        let tempYear = tempCalendarDate.getFullYear();
+        let tempDate = tempCalendarDate.getDate();
+        let tempDay = tempCalendarDate.getDay();
+        let tempMonth = tempCalendarDate.getMonth();
+
+        dayDiv.innerHTML = "<!--innerHTML-->"
+        console.log(dayDiv.innerHTML);
+
+        loopWeekDady: for (let i = 0; i < 6; i++) {
+          loopDate: for (let j = 0; j < 7; j++) {
+            console.log("tempYear: " + tempYear);
+            console.log("tempDay: " + tempDay);
+            console.log("tempDate: " + tempDate);
+            console.log("tempMonth: " + tempMonth);
+            console.log("i: " + i + "\nj: " + j);
+
+            let tempId = "" + tempYear + "y" + tempMonth + "m" + tempDate + "d";
+
+
+            if (tempDay == j) {
+              // dayDiv.innerHTML = dayDiv.innerHTML + "<div " + "id="+ tempId +" class= \"small-box\" " + " onclick=\"chooseDate("+tempId+")\""+ ">" + "<p>" + tempDate + "</p>" + "</div>";
+              dayDiv.innerHTML = dayDiv.innerHTML + "<div " + "id=" + tempId + " class= \"small-box\" " + ">" + "<p>" + tempDate + "</p>" + "</div>";
+              tempCalendarDate.setDate(tempDate + 1);
+              tempDay = tempCalendarDate.getDay();
+              tempDate = tempCalendarDate.getDate();
+
+            } else {
+              dayDiv.innerHTML = dayDiv.innerHTML + "<div class= \"small-box\" >" + "<p>" + " " + "</p>" + "</div>";
+            }
+            if (tempMonth != tempCalendarDate.getMonth()) {
+              tempMonth = tempCalendarDate.getMonth();
+              break loopWeekDady;
+            }
+
+          }
+
+        }
+
+        document.getElementById(theDateId).style.fontWeight = 700;
+      }
+      showDate();
+
+      // function chooseDate(id){
+      //   console.log(id);
+      //
+      //   document.getElementById(id).style.fontWeight = 700;
+      //
+      // }
+    </script>
+
+
+</body>
+
+</html>
