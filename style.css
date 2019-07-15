@@ -1,42 +1,43 @@
 @import url('https://fonts.googleapis.com/css?family=Dosis&display=swap');
-.calendar-div{
+
+.calendar-div {
   width: 360px;
-height: 360px;
+  height: 360px;
   background-color: #ededed;
   position: relative;
+  text-align: center;
+  vertical-align: middle;
+  box-shadow: 0px 0px 10px #888888;
 
-text-align: center;
-vertical-align:middle;
 }
 
-.calendar-div h4{
-    font-family: 'Dosis', sans-serif;
-    font-family: 'Dosis', sans-serif;
-    text-align: center;
-    vertical-align:middle;
-      line-height: 45px;
-
-      display: block;
+.calendar-div h4 {
+  font-family: 'Dosis', sans-serif;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 45px;
+  display: block;
   -webkit-margin-before: 0px;
   -webkit-margin-after: 0px;
   -webkit-margin-start: 0px;
   -webkit-margin-end: 0px;
+    color: #6b6f82;
 }
 
-.calendar-div p{
+.calendar-div p {
   font-family: 'Dosis', sans-serif;
   text-align: center;
-  vertical-align:middle;
-    line-height: 45px;
-
-    display: block;
--webkit-margin-before: 0px;
--webkit-margin-after: 0px;
--webkit-margin-start: 0px;
--webkit-margin-end: 0px;
+  vertical-align: middle;
+  line-height: 45px;
+  display: block;
+  -webkit-margin-before: 0px;
+  -webkit-margin-after: 0px;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+    color: #6b6f82;
 }
 
-.calendar-div .row{
+.calendar-div .row {
   width: 100%;
   height: 45px;
   margin-right: auto;
@@ -45,7 +46,7 @@ vertical-align:middle;
   background-color: #ededed;
 }
 
-.calendar-div .small-box{
+.calendar-div .small-box {
   height: 45px;
   position: relative;
   float: left;
@@ -54,35 +55,40 @@ vertical-align:middle;
   background-color: #ededed;
 }
 
-.calendar-div .container-77{
+.calendar-div .container-77 {
   width: 77.14px;
   height: 45px;
-
 }
 
-
-
-.calendar-div .float-left{
+.calendar-div .float-left {
   position: relative;
   float: left;
 }
 
-
-.calendar-div .float-right{
+.calendar-div .float-right {
   position: relative;
   float: right;
 }
 
-
-
-
-.calendar-div .dates{
-  width:360px;
+.calendar-div .dates {
+  width: 360px;
   height: 225px;
-
 }
 
-.calendar-div .container-90{
-height: 45px;
-width: 90px;
+.calendar-div .container-90 {
+  height: 45px;
+  width: 90px;
+}
+
+.calendar-div .button {
+  background-color: #ededed;
+  border: none;
+  color: #6b6f82;
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: 'Dosis', sans-serif;
+  bottom: 0px;
+  float: left;
 }
