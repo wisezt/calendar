@@ -45,14 +45,16 @@
       </div>
       <div id="minus" onclick="minus()" class="small-box minus ">
         <p>
-          <</p> </div> <div onclick="chooseMonth()" class="container-77 float-left">
-            <p id="month"></p>
+          <</p>
+        </div>
+        <div onclick="chooseMonth()" class="container-77 float-left">
+            <h4 id="month"></h4>
 
       </div>
 
 
       <div onclick="chooseYear()" class="container-77 float-left">
-        <p id="year"></p>
+        <h4 id="year"></h4>
       </div>
 
 
@@ -92,14 +94,14 @@
     <div class="calendar-btn row">
 
 
-        <div class="container-90 float-right">
-          <input type="button" name="" value="cancel">
+      <div class="container-90 float-right">
+        <input type="button" name="" value="cancel">
 
-        </div>
-        <div class="container-90 float-right">
-          <input type="button" name="" value="ok">
+      </div>
+      <div class="container-90 float-right">
+        <input type="button" name="" value="ok">
 
-        </div>
+      </div>
     </div>
 
 
@@ -109,8 +111,6 @@
 
 
   <script>
-
-
     function helloWorld() {
       document.getElementById("demo").innerHTML = "hello world";
     }
@@ -143,11 +143,10 @@
 
     }
 
-    // show Year
 
 
 
-    // show year
+    // reflesh month information
     function showMonth() {
       var months = new Array(12);
       months[0] = "Jan";
@@ -245,6 +244,22 @@
       console.log(dayDiv.innerHTML);
 
       loopWeekDady: for (let i = 0; i < 6; i++) {
+
+
+        // make there is enough rows for showing weeks.
+        // porvide an extra row when the month span 6 weeks
+        if (i==5){
+          document.getElementById("id-dates").style.height="270px";
+          console.log("i: 5" );
+          console.log("id-dates height: "+   document.getElementById("id-dates").style.height);
+
+
+        }else{
+            document.getElementById("id-dates").style.height="225px";
+        }
+
+
+
         loopDate: for (let j = 0; j < 7; j++) {
           console.log("tempYear: " + tempYear);
           console.log("tempDay: " + tempDay);
