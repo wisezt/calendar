@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Dosis&display=swap');
 .calendar-div{
   width: 360px;
-  height: 360px;
+height: 360px;
   background-color: #ededed;
   position: relative;
 
@@ -29,7 +29,7 @@ p{
   margin-right: auto;
   margin-left: auto;
   position: relative;
-
+  background-color: #ededed;
 }
 
 .small-box{
@@ -38,6 +38,7 @@ p{
   float: left;
   width: 51.43px;
   text-align: center;
+  background-color: #ededed;
 }
 
 .calendar-div .container-77{
@@ -51,4 +52,24 @@ p{
 .float-left{
   position: relative;
   float: left;
+}
+
+
+.float-right{
+  position: relative;
+  float: right;
+}
+
+
+
+
+.dates{
+  width:360px;
+  height: 225px;
+
+}
+
+.calendar-div .container-90{
+height: 45px;
+width: 90px;
 }
